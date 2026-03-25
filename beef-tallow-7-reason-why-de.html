@@ -51,43 +51,48 @@
       justify-content: space-between;
     }
     .kv-logo-img { height: 48px; width: auto; display: block; }
-    .header-info-btn {
-      display: inline-flex;
+    .logo-wrap { display: flex; align-items: center; }
+    .kv-info-btn {
+      display: inline-flex !important;
       align-items: center;
       gap: 8px;
-      background: var(--gold);
-      color: var(--black);
-      font-size: 0.9rem;
-      font-weight: 700;
-      padding: 10px 22px;
-      border-radius: 8px;
-      border: 1px solid #333;
+      background: var(--gold) !important;
+      color: var(--black) !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      padding: 10px 22px !important;
+      border-radius: 8px !important;
+      border: 1px solid #333 !important;
       cursor: pointer;
+      text-decoration: none;
       transition: background 0.2s, color 0.2s;
     }
-    .header-info-btn:hover { background: var(--black); color: var(--gold); }
-    .header-info-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+    .kv-info-btn:hover { background: var(--black) !important; color: var(--gold) !important; }
+    .elementor-button-content-wrapper { display: flex; align-items: center; gap: 8px; }
+    .elementor-button-icon svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
     /* ── INFO MODAL ── */
-    .modal-overlay {
+    .kv-modal-overlay {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.55); z-index: 9999;
       align-items: center; justify-content: center; padding: 20px;
     }
-    .modal-overlay.active { display: flex; }
-    .modal-box {
+    .kv-modal-overlay.active { display: flex; }
+    .kv-modal-box {
       background: #fff; border-radius: 12px; max-width: 640px; width: 100%;
       max-height: 85vh; overflow-y: auto; padding: 40px 44px; position: relative;
       box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
-    .modal-close {
+    .kv-modal-close {
       position: absolute; top: 14px; right: 18px;
       background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #555;
     }
-    .modal-close:hover { color: #000; }
-    .modal-title { font-size: 1.25rem; font-weight: 800; color: #111; margin-bottom: 18px; }
-    .modal-body p { font-size: 0.9rem; color: #333; line-height: 1.75; margin-bottom: 12px; }
-    .modal-body p:last-child { margin-bottom: 0; }
+    .kv-modal-close:hover { color: #000; }
+    .kv-modal-title { font-size: 1.25rem; font-weight: 800; color: #111; margin-bottom: 18px; }
+    .kv-modal-body p { font-size: 0.9rem; color: #333; line-height: 1.75; margin-bottom: 12px; }
+    .kv-modal-body p:last-child { margin-bottom: 0; }
+    .footer-logo-link { display: inline-block; margin-bottom: 18px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: #555; }
 
     /* ── HERO ── */
     .hero { background: var(--white); text-align: center; padding: 48px 20px 36px; }
@@ -261,28 +266,45 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#">
-      <img src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-2-1536x384.jpg"
-           alt="Kaufvergleich" class="kv-logo-img" />
-    </a>
-    <a class="header-info-btn" href="#"
-       onclick="document.getElementById('infoModal').classList.add('active'); return false;">
-      Info
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+    <div class="logo-wrap">
+      <a href="#">
+        <img
+          src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png"
+          srcset="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-300x75.png 300w,
+                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-768x192.png 768w,
+                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png 1024w"
+          sizes="(max-width: 400px) 300w, 220px"
+          alt="Kaufvergleich"
+          class="kv-logo-img"
+        />
+      </a>
+    </div>
+    <a class="elementor-button elementor-button-link elementor-size-sm kv-info-btn" href="#"
+       onclick="document.getElementById('kvInfoModal').classList.add('active'); return false;">
+      <span class="elementor-button-content-wrapper">
+        <span class="elementor-button-text">Info</span>
+        <span class="elementor-button-icon">
+          <svg aria-hidden="true" class="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+        </span>
+      </span>
     </a>
   </div>
 </header>
 
 <!-- INFO MODAL -->
-<div class="modal-overlay" id="infoModal" onclick="if(event.target===this)this.classList.remove('active')">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('infoModal').classList.remove('active')" aria-label="Schließen">&#x2715;</button>
-    <div class="modal-title">Wie wir testen</div>
-    <div class="modal-body">
-      <p>Willkommen auf unserer Produkttest-Plattform – Ihrem zuverlässigen Ratgeber für fundierte Kaufentscheidungen. Unsere Plattform ist auf die Präsentation der besten Produkte und Dienstleistungen durch unabhängige Tests spezialisiert.</p>
-      <p>Unsere Plattform wird durch Empfehlungsprovisionen der getesteten Hersteller finanziert. So können wir Ihnen detaillierte und unvoreingenommene Berichte kostenlos anbieten.</p>
-      <p>Die Inhalte dieser Seite basieren auf einer redaktionellen Bewertung anhand objektiver Vergleichskriterien wie Zusammensetzung, Eigenschaften, Benutzerfreundlichkeit und Preis-Leistungs-Verhältnis.</p>
-      <p><strong>Hinweis:</strong> Wenn Sie mit der Erwähnung Ihrer Marke in einem unserer Berichte nicht einverstanden sind, kontaktieren Sie uns bitte über die im Impressum angegebene E-Mail-Adresse.</p>
+<div class="kv-modal-overlay" id="kvInfoModal"
+     onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="kv-modal-box">
+    <button class="kv-modal-close"
+            onclick="document.getElementById('kvInfoModal').classList.remove('active')"
+            aria-label="Schließen">&#x2715;</button>
+    <div class="kv-modal-title">So testen wir</div>
+    <div class="kv-modal-body">
+      <p>Herzlich willkommen bei Kaufvergleich, Ihrem vertrauenswürdigen Ratgeber für fundierte Kaufentscheidungen. Unsere Plattform ist darauf spezialisiert, durch unabhängige Tests Ihnen die besten Produkte und Dienstleistungen aus verschiedenen Branchen und Nischen vorzustellen. Unser Ziel ist es, Sie umfassend zu informieren, damit Sie Fehlkäufe vermeiden und stets die beste Wahl treffen können.</p>
+      <p>Kaufvergleich finanziert sich durch Empfehlungsprämien von den Herstellern der getesteten Produkte. Dies ermöglicht uns, Ihnen detaillierte und unvoreingenommene Testberichte anzubieten, ohne dass dadurch zusätzliche Kosten für Sie entstehen.</p>
+      <p>Die Inhalte auf dieser Seite basieren auf einer redaktionellen Bewertung nach objektiven Vergleichskriterien wie z.&nbsp;B. Zusammensetzung, Besonderheiten, Anwendungsfreundlichkeit und Preis-Leistungs-Verhältnis. Dabei werden je nach Verfügbarkeit sowohl eigene Erfahrungen als auch öffentlich zugängliche Informationen der Hersteller, Onlinehändler und Kundenbewertungen berücksichtigt.</p>
+      <p>Wir bieten neben den regulären Tests auch gesponserte Beiträge an, bei denen Produkte auf speziellen Wunsch einer Firma geprüft werden. Diese sind stets als solche gekennzeichnet und beeinflussen nicht das Ergebnis der Bewertung.</p>
+      <p><strong>Disclaimer:</strong> Sollten Sie mit der Erwähnung Ihrer Marke oder Ihres Unternehmens in einem unserer Testberichte nicht zufrieden sein, bitten wir Sie, uns über die im Impressum hinterlegte E-Mail-Adresse zu kontaktieren. Wir werden uns umgehend um Ihr Anliegen kümmern.</p>
     </div>
   </div>
 </div>
@@ -531,25 +553,34 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <img src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-2-1536x384.jpg"
-           alt="Kaufvergleich" class="footer-logo-img" />
-      <p>Willkommen bei Kaufvergleich – Ihrer vertrauenswürdigen Ressource für fundierte Kaufentscheidungen. Unsere Plattform ist auf die Präsentation der besten Produkte durch unabhängige Tests und ehrliche Bewertungen spezialisiert.</p>
+      <a href="#" class="footer-logo-link">
+        <img
+          src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png"
+          srcset="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-300x75.png 300w,
+                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-768x192.png 768w,
+                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png 1024w"
+          sizes="220px"
+          alt="Kaufvergleich"
+          class="footer-logo-img"
+        />
+      </a>
+      <p>Herzlich willkommen bei Kaufvergleich, Ihrem vertrauenswürdigen Ratgeber für fundierte Kaufentscheidungen. Unsere Plattform ist darauf spezialisiert, durch unabhängige Tests Ihnen die besten Produkte und Dienstleistungen aus verschiedenen Branchen und Nischen vorzustellen.</p>
     </div>
     <div class="footer-col">
       <h4>Rechtliches</h4>
       <ul>
         <li><a href="#">Impressum</a></li>
         <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Vergleichsmethode</a></li>
+        <li><a href="#">So Vergleichen wir</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
-      <div class="footer-contact">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="#555" style="flex-shrink:0;margin-top:3px">
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0f1f4b" style="flex-shrink:0;margin-top:3px">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
-        <span>verwaltung@kaufvergleich.com</span>
+        <span>verwaltung@<br>kaufvergleich.com</span>
       </div>
     </div>
   </div>
