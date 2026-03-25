@@ -1,0 +1,44 @@
+/*
+  The Grooming Report — Tailwind Helper Styles
+  All visual design is now handled by Tailwind CSS (loaded via CDN in each HTML file).
+  This file contains ONLY:
+    1. Base typography (reset-safe defaults)
+    2. Article body descendant selectors (cleaner than adding classes to every heading/paragraph)
+    3. Pseudo-element list markers that can't be expressed cleanly inline
+    4. Complex :nth-child selectors
+*/
+
+/* ---- BASE TYPOGRAPHY ---- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+}
+p { margin-bottom: 1.15rem; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---- ARTICLE BODY TYPOGRAPHY ---- */
+.art-body { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+.art-body h2 { font-size: 1.65rem; font-weight: 800; line-height: 1.18; margin: 2.4rem 0 0.875rem; color: #0b1a2e; letter-spacing: -0.3px; }
+.art-body h3 { font-size: 1.22rem; font-weight: 800; line-height: 1.18; margin: 1.75rem 0 0.625rem; letter-spacing: -0.3px; }
+.art-body p  { font-size: 1.05rem; line-height: 1.78; margin-bottom: 1.25rem; }
+.art-body ul, .art-body ol { margin: 1rem 0 1.375rem; padding-left: 1.4rem; }
+.art-body li { font-size: 1.05rem; line-height: 1.7; margin-bottom: 9px; }
+.art-body strong { color: #0f172a; }
+.art-body em { color: #475569; }
+
+/* ---- PRODUCT BENEFIT CHECKMARKS ---- */
+.pb-benefit { position: relative; padding-left: 1.4rem; display: flex; font-size: 0.9rem; line-height: 1.45; }
+.pb-benefit::before { content: "✓"; color: #16a34a; font-weight: 800; position: absolute; left: 0; top: 1px; flex-shrink: 0; }
+
+/* ---- PROS / CONS LIST MARKERS ---- */
+.pros > ul, .cons > ul { list-style: none; padding: 0; margin: 0; }
+.pros li, .cons li { position: relative; padding-left: 1.2rem; font-size: 0.87rem; margin-bottom: 6px; line-height: 1.5; }
+.pros li::before { content: "+"; color: #16a34a; font-weight: 800; position: absolute; left: 0; }
+.cons li::before { content: "−"; color: #dc2626; font-weight: 800; position: absolute; left: 0; }
+
+/* ---- TABLE ROW STRIPING ---- */
+.comp-table tr:nth-child(even):not(.row-hl) td { background-color: #f8fafc; }
+.quick-compare tr:nth-child(even):not(.hl) td  { background-color: #fafafa; }
+
+/* ---- SMOOTH SCROLL ---- */
+html { scroll-behavior: smooth; }
