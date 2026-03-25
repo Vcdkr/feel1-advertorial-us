@@ -553,16 +553,48 @@
       .page-wrap { grid-template-columns: 1fr; }
       .sidebar { position: static; }
       .article-inner { padding: 22px 20px; }
-      .main-headline { font-size: 1.5rem; }
+      .main-headline { font-size: 1.6rem; }
       .reason-block { grid-template-columns: 1fr; gap: 16px; }
       .reason-spacer { display: none; }
       .reason-headline { font-size: 1.1rem; }
       .reason-body { font-size: 0.97rem; }
-      .footer-main { grid-template-columns: 1fr 1fr; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 28px; padding: 36px 24px 28px; }
+      .promo-grid { grid-template-columns: 1fr; }
+      .promo-headline { font-size: 1.5rem; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 14px; height: 60px; }
+      .kv-logo-img { height: 40px; }
+      .elementor-size-sm.kv-info-btn { padding: 9px 16px; font-size: 0.85rem; }
+      .kv-modal-box { padding: 28px 20px; }
+      .page-wrap { margin: 12px auto; padding: 0 10px; }
+      .article-inner { padding: 18px 14px; }
       .main-headline { font-size: 1.3rem; }
-      .footer-main { grid-template-columns: 1fr; }
+      .quote-box { padding: 11px 14px; font-size: 0.88rem; }
+      .comp-table { font-size: 0.78rem; min-width: 340px; }
+      .comp-table tbody td { padding: 11px 10px; }
+      .comp-table thead .th-feel1 { padding: 12px 10px; font-size: 0.8rem; }
+      .tldr-text { font-size: 0.95rem; }
+      .reason-block { margin-bottom: 32px; }
+      .reason-headline { font-size: 1rem; }
+      .reason-body { font-size: 0.92rem; }
+      .cta-btn-main { display: block; width: 100%; text-align: center; padding: 16px 20px; font-size: 0.95rem; }
+      .bottom-strip { padding: 28px 16px; }
+      .bottom-strip h3 { font-size: 1.1rem; }
+      .promo-section { padding: 40px 12px 32px; }
+      .promo-inner { padding: 24px 16px 20px; }
+      .promo-headline { font-size: 1.3rem; }
+      .promo-badge-item { width: 50px; height: 50px; font-size: 0.45rem; }
+      .promo-badge-item strong { font-size: 0.85rem; }
+      .footer-main { grid-template-columns: 1fr; gap: 20px; padding: 28px 16px 20px; }
+      .footer-bottom { padding: 14px 16px; }
+    }
+    @media (max-width: 400px) {
+      .main-headline { font-size: 1.15rem; }
+      .comp-table { min-width: 280px; font-size: 0.72rem; }
+      .comp-table tbody td { padding: 9px 8px; }
+      .promo-badges { gap: 5px; }
+      .promo-badge-item { width: 44px; height: 44px; }
     }
   </style>
 </head>
