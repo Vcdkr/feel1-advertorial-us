@@ -1045,12 +1045,20 @@
       <!-- CTA pinned to bottom of card -->
       <a href="https://go.getfeel1.com/feel1-tallow-w-2499-0203-de/landing"
          target="_blank"
-         style="display:block;width:100%;background:#2e9e6b;color:#fff;font-weight:800;font-size:0.97rem;
-                text-transform:uppercase;letter-spacing:0.1em;padding:20px 10px;font-size:0.78rem;
-                text-decoration:none;flex-shrink:0;transition:background 0.2s;"
+         style="display:block;width:100%;background:#2e9e6b;color:#fff;font-weight:800;font-size:1rem;
+                text-transform:uppercase;letter-spacing:0.08em;padding:22px 12px;
+                text-decoration:none;flex-shrink:0;transition:background 0.2s;
+                box-shadow:0 4px 14px rgba(46,158,107,0.45);
+                animation:pulse-cta 2s ease-in-out infinite;"
          onmouseover="this.style.background='#237a54'" onmouseout="this.style.background='#2e9e6b'">
-        Jetzt Verfügbarkeit prüfen
+        🟢 Jetzt Verfügbarkeit prüfen →
       </a>
+      <style>
+        @keyframes pulse-cta {
+          0%,100% { box-shadow: 0 4px 14px rgba(46,158,107,0.45); }
+          50%      { box-shadow: 0 4px 22px rgba(46,158,107,0.75); }
+        }
+      </style>
 
     </div>
   </aside>
