@@ -434,7 +434,7 @@
     }
 
     /* ── SIDEBAR ── */
-    .sidebar { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar { position: sticky; top: 24px; align-self: start; display: flex; flex-direction: column; gap: 20px; }
 
     /* ── BOTTOM STRIP ── */
     .bottom-strip {
@@ -1049,8 +1049,7 @@
   <aside class="sidebar">
 
     <div id="kv-sidebar-card"
-         style="border:1px solid #d0d0d0;border-radius:10px;overflow:hidden;background:#fff;text-align:center;
-                position:sticky;top:16px;display:flex;flex-direction:column;">
+         style="border:1px solid #d0d0d0;border-radius:10px;overflow:hidden;background:#fff;text-align:center;display:flex;flex-direction:column;">
       <div style="padding:14px 12px 10px;flex:1;display:flex;flex-direction:column;align-items:center;">
         <img src="https://img.funnelish.com/5973/869783/1753174619-Feel1_LOGO.svg"
              alt="Feel1"
@@ -1184,23 +1183,6 @@
   </div>
 </footer>
 
-<script>
-  (function() {
-    var card = document.getElementById('kv-sidebar-card');
-    if (!card) return;
-    var GAP_TOP = 16, GAP_BOTTOM = 24;
-    function fitCard() {
-      var viewH = window.innerHeight;
-      var scrollY = window.scrollY || window.pageYOffset;
-      var desiredTop = Math.max(GAP_TOP - Math.min(scrollY * 0.25, GAP_TOP + 40), -(GAP_TOP + 40));
-      card.style.top = desiredTop.toFixed(1) + 'px';
-      card.style.maxHeight = (viewH - desiredTop - GAP_BOTTOM) + 'px';
-    }
-    fitCard();
-    window.addEventListener('scroll', fitCard, { passive: true });
-    window.addEventListener('resize', fitCard, { passive: true });
-  })();
-</script>
 
 </body>
 </html>
