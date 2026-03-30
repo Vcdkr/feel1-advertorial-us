@@ -457,16 +457,17 @@
 
     /* ── PROMO SECTION ── */
     .promo-section {
-      background: #f6efea;
+      background: #f8f6f1;
       padding: 52px 20px 44px;
+      border-top: 3px solid var(--gold);
     }
     .promo-inner {
       max-width: 860px;
       margin: 0 auto;
       position: relative;
-      border: 2px dashed #c8b5a8;
-      border-radius: 18px;
-      background: #fdf9f6;
+      border: 1.5px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
       padding: 30px 28px 28px;
     }
     .promo-badge-top {
@@ -474,8 +475,8 @@
       top: -18px;
       left: 50%;
       transform: translateX(-50%);
-      background: #111111;
-      color: #fff;
+      background: var(--gold);
+      color: #111;
       font-weight: 800;
       font-size: 0.78rem;
       letter-spacing: 0.18em;
@@ -519,24 +520,26 @@
       text-transform: uppercase;
     }
     .badge-gold {
-      background: #f0c830;
+      background: var(--gold);
       color: #111;
-      border: 2px solid #c9920d;
+      border: 2px solid #a87830;
     }
     .badge-brown {
-      background: #111111;
+      background: #111;
       color: #fff;
-      border: 2px solid #333333;
+      border: 2px solid var(--gold);
     }
     .promo-badge-item strong { font-size: 1rem; font-weight: 900; line-height: 1; }
     .promo-content { display: flex; flex-direction: column; gap: 12px; }
     .promo-eyebrow {
-      font-size: 0.75rem;
-      color: #666;
+      font-size: 0.68rem;
+      color: #888;
       text-align: center;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
     .promo-headline {
+      font-family: var(--font-serif);
       font-size: 2rem;
       font-weight: 900;
       color: #111;
@@ -547,7 +550,7 @@
       padding: 0;
       margin: 0;
     }
-    .promo-pct { color: #cc2222; }
+    .promo-pct { color: var(--gold); }
     .promo-desc {
       font-size: 0.88rem;
       color: #555;
@@ -556,7 +559,7 @@
     }
     .promo-cta {
       display: block;
-      background: #111111;
+      background: #2e9e6b;
       color: #fff;
       font-weight: 800;
       font-size: 0.95rem;
@@ -565,22 +568,22 @@
       text-align: center;
       padding: 17px 24px;
       border-radius: 50px;
-      border: 3px solid #333333;
+      border: none;
       text-decoration: none;
       transition: background 0.2s;
     }
-    .promo-cta:hover { background: #333333; }
+    .promo-cta:hover { background: #237a54; }
     .promo-urgency {
-      font-weight: 800;
-      font-size: 0.8rem;
+      font-weight: 700;
+      font-size: 0.78rem;
       text-align: center;
-      color: #111;
-      letter-spacing: 0.12em;
+      color: #666;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     .promo-risk-bar {
-      background: #fefaea;
-      border: 1px solid #f0e0a0;
+      background: #f8f6f1;
+      border: 1px solid #ddd;
       border-radius: 8px;
       padding: 10px 16px;
       font-size: 0.83rem;
@@ -588,7 +591,7 @@
       color: #555;
     }
     .risk-high { color: #cc2222; font-weight: 800; }
-    .promo-guarantee { font-size: 0.83rem; text-align: center; color: #666; }
+    .promo-guarantee { font-size: 0.83rem; text-align: center; color: #888; }
     @media (max-width: 640px) {
       .promo-grid { grid-template-columns: 1fr; }
       .promo-headline { font-size: 1.5rem; }
